@@ -10,7 +10,6 @@ import paho.mqtt.client as paho
 import json
 from gtts import gTTS
 from googletrans import Translator
-st.title("Tercera página")
 
 import os
 import streamlit as st
@@ -124,4 +123,33 @@ if st.button('OFF'):
     
 else:
     st.write('')
+
+st.text("Blue Light")
+
+if st.button('ON'):
+    act1="ON"
+    client1= paho.Client("clientekp")                           
+    client1.on_publish = on_publish                          
+    client1.connect(broker,port)  
+    message =json.dumps({"Act2":act1})
+    ret= client1.publish("kp_s", message)
+ 
+    #client1.subscribe("Sensores")
+    
+    
+else:
+    st.write('')
+
+if st.button('OFF'):
+    act1="OFF"
+    client1= paho.Client("clientekp")                           
+    client1.on_publish = on_publish                          
+    client1.connect(broker,port)  
+    message =json.dumps({"Act2":act1})
+    ret= client1.publish("kp_s", message)
+  
+    
+else:
+    st.write('')
+
 
