@@ -128,7 +128,7 @@ st.text("Blue Light")
 
 if st.button('ON'):
     act2="turn the blue light on"
-    client1= paho.Client("clientekp")                           
+    client1= paho.Client("clientek2p")                           
     client1.on_publish = on_publish                          
     client1.connect(broker,port)  
     message =json.dumps({"Act2":act2})
@@ -142,7 +142,7 @@ else:
 
 if st.button('OFF'):
     act2="turn the blue light off"
-    client1= paho.Client("clientekp")                           
+    client1= paho.Client("clientek2p")                           
     client1.on_publish = on_publish                          
     client1.connect(broker,port)  
     message =json.dumps({"Act2":act2})
