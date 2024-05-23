@@ -1,4 +1,6 @@
 import streamlit as st
+from PIL import Image
+
 st.title("WELCOME TO YOUR INTERACTIVE HOME")
 image = Image.open('welcomehome.jpg')
 st.image(image)
