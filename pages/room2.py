@@ -103,7 +103,7 @@ if st.button('ON'):
     client1= paho.Client("clientekp")                           
     client1.on_publish = on_publish                          
     client1.connect(broker,port)  
-    message =json.dumps({"Act2":act1})
+    message =json.dumps({"Act2":act5})
     ret= client1.publish("kp_s", message)
  
     #client1.subscribe("Sensores")
@@ -117,7 +117,7 @@ if st.button('OFF'):
     client1= paho.Client("clientekp")                           
     client1.on_publish = on_publish                          
     client1.connect(broker,port)  
-    message =json.dumps({"Act2":act1})
+    message =json.dumps({"Act2":act6})
     ret= client1.publish("kp_s", message)
   
     
@@ -131,7 +131,7 @@ if st.button('ON'):
     client1= paho.Client("clientekp")                           
     client1.on_publish = on_publish                          
     client1.connect(broker,port)  
-    message =json.dumps({"Act2":act1})
+    message =json.dumps({"Act2":act7})
     ret= client1.publish("kp_s", message)
  
     #client1.subscribe("Sensores")
@@ -145,7 +145,7 @@ if st.button('OFF'):
     client1= paho.Client("clientekp")                           
     client1.on_publish = on_publish                          
     client1.connect(broker,port)  
-    message =json.dumps({"Act2":act1})
+    message =json.dumps({"Act2":act8})
     ret= client1.publish("kp_s", message)
   
     
