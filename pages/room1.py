@@ -31,11 +31,7 @@ client1.on_message = on_message
 st.title("ROOM 1")
 image = Image.open('room1.jpg')
 st.image(image)
-st.subheader("voice control")
-
-
-
-
+st.subheader("CONTROL WITH VOICE")
 
 
 st.write("Press the button and speak to control the lights (purple and green) and the door.")
@@ -76,3 +72,64 @@ if result:
         client1.connect(broker,port)  
         message =json.dumps({"Act1":result.get("GET_TEXT").strip()})
         ret= client1.publish("kpv_ctrl", message)
+
+
+st.subheader("CONTROL WITH BUTTONS")
+
+st.text("Purple Light")
+
+if st.button('PURPLE ON'):
+    act2="turn the yellow light on"
+    client1= paho.Client("clientekp")                           
+    client1.on_publish = on_publish                          
+    client1.connect(broker,port)  
+    message =json.dumps({"Act2":act2})
+    ret= client1.publish("kpvp_ctrl", message)
+ 
+    #client1.subscribe("Sensores")
+    
+    
+else:
+    st.write('')
+
+if st.button('PURPLE OFF'):
+    act2="turn the yellow light off"
+    client1= paho.Client("clientekp")                           
+    client1.on_publish = on_publish                          
+    client1.connect(broker,port)  
+    message =json.dumps({"Act2":act2})
+    ret= client1.publish("kpvp_ctrl", message)
+  
+    
+else:
+    st.write('')
+
+st.text("Green Light")
+
+if st.button('GREEN ON'):
+    act2="turn the blue light on"
+    client1= paho.Client("clientek2p")                           
+    client1.on_publish = on_publish                          
+    client1.connect(broker,port)  
+    message =json.dumps({"Act2":act2})
+    ret= client1.publish("kpvg_ctrl", message)
+ 
+    #client1.subscribe("Sensores")
+    
+    
+else:
+    st.write('')
+
+if st.button('GREEN OFF'):
+    act2="turn the blue light off"
+    client1= paho.Client("clientek2p")                           
+    client1.on_publish = on_publish                          
+    client1.connect(broker,port)  
+    message =json.dumps({"Act2":act2})
+    ret= client1.publish("kpvg_ctrl", message)
+  
+    
+else:
+    st.write('')
+
+
