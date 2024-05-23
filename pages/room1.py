@@ -28,7 +28,9 @@ client1.on_message = on_message
 
 
 
-st.title("Interfaces Multimodales")
+st.title("ROOM 1")
+image = Image.open('room1.jpg')
+st.image(image)
 st.subheader("CONTROL POR VOZ")
 
 
