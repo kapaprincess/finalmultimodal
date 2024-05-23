@@ -42,6 +42,8 @@ client1.on_message = on_message
 
 
 st.title("ROOM 2")
+image = Image.open('room2.jpg')
+st.image(image)
 st.subheader("CONTROL WITH VOICE")
 st.write("Use your voice to control the lights (yellow and blue) and the door.")
 
