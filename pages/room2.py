@@ -43,7 +43,7 @@ client1.on_message = on_message
 
 st.title("ROOM 2")
 st.subheader("CONTROL WITH VOICE")
-
+st.write("Use your voice to control the lights (yellow and blue) and the door.")
 
 
 
@@ -51,7 +51,7 @@ st.subheader("CONTROL WITH VOICE")
 
 st.write("Tap the button and speak")
 
-stt_button = Button(label=" Inicio ", width=200)
+stt_button = Button(label=" Speak ", width=200)
 
 stt_button.js_on_event("button_click", CustomJS(code="""
     var recognition = new webkitSpeechRecognition();
